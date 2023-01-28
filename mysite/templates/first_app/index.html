@@ -10,9 +10,24 @@
     <link rel="stylesheet" href="{% static "css/mystyle.css" %}" />
   </head>
   <body>
-    <h1>Hello, this is index.html</h1>
-    {{insert_me}}
-    <br />
-    <img src="{% static "images/pict.png" %}" alt="image should be here" />
+    <h1>Hi, here are your access records:</h1>
+    <div class="django">
+      {% if access_records%}
+      <table>
+        <thead>
+          <th>site name</th>
+          <th>date accessed</th>
+        </thead>
+        {% for acc in access_records%}
+        <tr>
+          <td>{{acc.name}}</td>
+          <td>{{acc.date}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <h3>No Access Records Found</h3>
+      {% endif %}
+    </div>
   </body>
 </html>

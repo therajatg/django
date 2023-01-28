@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}" />
+  </head>
+  <body>
+    {% for user in users %}
+    <p>User Info</p>
+    <ul>
+      <li>First Name: {{user.first_name}}</li>
+      <li>Last Name: {{user.last_name}}</li>
+      <li>email: {{user.email}}</li>
+    </ul>
+    {% endfor %}
+  </body>
+</html>
